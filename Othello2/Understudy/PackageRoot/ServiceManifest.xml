@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="UnderstudyPkg" Version="1.0.1" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <ServiceTypes>
+    <StatefulServiceType ServiceTypeName="UnderstudyActorServiceType" HasPersistedState="true">
+      <Extensions>
+        <Extension Name="__GeneratedServiceType__" GeneratedId="bf04a6fa-f544-4b56-bfc9-d79b079ae8b3|Persisted">
+          <GeneratedNames xmlns="http://schemas.microsoft.com/2015/03/fabact-no-schema">
+            <DefaultService Name="UnderstudyActorService" />
+            <ReplicatorEndpoint Name="UnderstudyActorServiceReplicatorEndpoint" />
+            <ReplicatorConfigSection Name="UnderstudyActorServiceReplicatorConfig" />
+            <ReplicatorSecurityConfigSection Name="UnderstudyActorServiceReplicatorSecurityConfig" />
+            <ServiceEndpointV2_1 Name="UnderstudyActorServiceEndpointV2_1" />
+          </GeneratedNames>
+        </Extension>
+      </Extensions>
+    </StatefulServiceType>
+  </ServiceTypes>
+  <CodePackage Name="Code" Version="1.0.0">
+    <EntryPoint>
+      <ExeHost>
+        <Program>Understudy.exe</Program>
+      </ExeHost>
+    </EntryPoint>
+    <EnvironmentVariables>
+      <EnvironmentVariable Name="ApplicationInsightsInstrumentationKey" Value="" />
+    </EnvironmentVariables>
+  </CodePackage>
+  <ConfigPackage Name="Config" Version="1.0.0" />
+  <Resources>
+    <Endpoints>
+      <Endpoint Name="UnderstudyActorServiceEndpointV2_1" />
+      <Endpoint Name="UnderstudyActorServiceReplicatorEndpoint" />
+    </Endpoints>
+  </Resources>
+  <!-- The content will be generated during build -->
+</ServiceManifest>
